@@ -43,7 +43,7 @@
                 //1 - Settings (please update to math your own)
                 $username='yourusername'; //Provide your instagram username
                 $access_token='youraccesstoken'; //Provide your instagram access token
-                $count='10'; //How many shots do you want?
+                $count='20'; //How many shots do you want?
 
                 //2 - Include the php class
                 include('instagram.php');
