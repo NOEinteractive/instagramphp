@@ -1,0 +1,16 @@
+.instagram_shots{
+    margin: 20px 0;
+    text-align: center;
+}
+.instagram_shots li{
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+.ie7 .instagram_shots li{
+    display: inline;
+    zoom: 1;
+}
+.instagram_shots li img{
+    border: 1px solid #ccc;
+    padding: 3px;
+}

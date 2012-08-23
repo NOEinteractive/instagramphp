@@ -1,0 +1,636 @@
+/* @override Credits */
+/*
+Theme Name: NOE starter
+Author: NOE interactive
+Author URL: http://noe-interactive.com
+Description: Theme NOE starter, theme de base, sans style, utilis√© pour d√©marrer un projet noewp
+Version: 1.5
+Date : 10.05.2012
+Tags: noe, starter
+*/
+
+/*[Table des matieres]
+
+0-Notes
+
+1-Couleurs
+
+2-Structure
+	Gabarit
+ 	Header
+ ¬†		Menu
+ ¬†		Logo
+ ¬†		Langues
+ ¬†		Rechercher
+ 	Footer
+ 		Main footer
+ 		Sub footer
+
+3-Content
+	Titre page
+	Sidebar
+	Page 404
+ 	Page Resultats Recherche
+
+4-Modules
+	Actualites
+		Mode fiche
+		Mode liste
+
+5-UI elements
+	Breadcrumb
+	Formulaires
+	Pagination
+	Scrollbar
+	Text overriding
+ 	Social Toolbar
+
+-------------------------------------------------------------------*/
+
+/* @group 0-Notes */
+/*-------------------------------------------------------------------*
+Cette feuille de style est la feuille de style principale du projet.
+Les autres feuilles de style reset.css, grid.css et editor-style.css sont inclues dans l'entete du code html
+Pour atteindre une version de internet explorer utilisez les classes .ie6, .ie7, .ie8, .ie9
+---------------------------------------------------------------------*/
+
+/* @end */
+
+/* @group 1-Couleurs */
+
+/*#f00001*/
+
+/* @end */
+
+/* @group 2-Structure */
+/*-------------------------------------------------------------------*
+Structure
+Commentaire : Structure globale du site
+---------------------------------------------------------------------*/
+html,body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: 0 auto;
+}
+a {cursor: pointer; }
+
+#wrapper {
+    overflow: hidden;
+}
+
+/* @group Header */
+
+header {
+    background: #111;
+    height: 60px;
+    position: fixed;
+    z-index: 15000;
+    width: 100%;
+}
+header.fixed{
+    opacity: 0.9;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 90);
+    filter: alpha(opacity = 90);
+}
+header:hover{
+    opacity: 1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 100);
+    filter: alpha(opacity = 100);
+}
+
+#logo {
+    display: block;
+    float: left;
+    text-indent: -9999px;
+    width: 182px;
+    height: 20px;
+    background: transparent url('logo.png') left center no-repeat;
+    padding: 20px 0;
+}
+
+/* @end */
+
+/* @group Main */
+
+section.contained{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#main{
+    overflow: hidden;
+    margin-top: 60px;
+}
+.ie7 #main{
+    padding-top: 60px;
+}
+
+/* @end */
+
+/* @group Footer */
+
+footer{
+    background: #222;
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 210px;
+}
+footer .contained{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+footer .contained section {
+	float: left;
+	width: 200px;
+	height: 170px;
+}
+footer .contained section h2 {
+	color: #fff;
+	font-size: 14px;
+}
+footer .contained section a {
+	color: rgba(255,255,255,0.6) !important;
+	display: block;
+	margin: 0 0 20px 0;
+}
+footer .contained section a:hover, footer .contained section a:hover span {
+	color: rgba(255,255,255,1) !important;
+	text-decoration: none;
+}
+
+/* @group Reseaux sociaux */
+
+footer .twitter {
+	width: 121px;
+	height: 121px;
+	display: block;
+	background: url('ico-twitter.png') 0 0 no-repeat;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	text-indent: -9999px;
+	opacity: .1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 10);
+    filter: alpha(opacity = 10);
+	-webkit-transition: opacity 350ms ease-out;
+	-moz-transition: opacity 350ms ease-out;
+	-o-transition: opacity 350ms ease-out;
+	transition: opacity 350ms ease-out;
+}
+
+footer .twitter:hover {
+	background-position: 0 -121px;
+	opacity: 1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 100);
+    filter: alpha(opacity = 100);
+}
+
+footer .facebook {
+	width: 121px;
+	height: 121px;
+	display: block;
+	background: url('ico-facebook.png') 0 0 no-repeat;
+	position: absolute;
+	right: 120px;
+	top: 20px;
+	text-indent: -9999px;
+	opacity: .1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 10);
+    filter: alpha(opacity = 10);
+	-webkit-transition: opacity 350ms ease-out;
+	-moz-transition: opacity 350ms ease-out;
+	-o-transition: opacity 350ms ease-out;
+	transition: opacity 350ms ease-out;
+}
+
+footer .facebook:hover {
+	background-position: 0 -121px;
+	opacity: 1;
+    -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 100);
+    filter: alpha(opacity = 100);
+}
+
+/* @end */
+
+/* @group Copyright */
+
+#footerlinks {
+	clear: both;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	margin: 20px 0;
+	padding: 20px 0;
+}
+
+#footerlinks, #footerlinks a {
+	color: rgba(255,255,255,0.3) !important;
+}
+
+#footerlinks a:hover {
+	color: rgba(255,255,255,1) !important;
+	text-decoration: none;
+}
+
+/* @end */
+
+@media screen and (max-width: 640px) {
+
+footer{
+    background: #222;
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 330px;
+}
+
+footer .contained section {
+	float: left;
+	width: 140px;
+	height: 330px;
+	margin-left: 20px;
+}
+footer .newsletter, #footerlinks {
+	display: none;
+}
+footer .twitter {
+	top: 200px;
+	left: 44px;
+}
+footer .facebook {
+	top: 200px;
+	left: 155px;
+}
+}
+
+/* @end */
+/* @end */
+
+/* @group 3-Content */
+/*-------------------------------------------------------------------*
+Content
+Commentaire : Contenu centrale de la page incluant Titre, Sidebar et contenu (+ Pages sp√©ciales : 404, r√©sultats de recherche)
+---------------------------------------------------------------------*/
+
+/* @group Page Interieure */
+
+#crumbs, #searchformwrap {
+	display: none;
+}
+
+.entry-title {
+	background: #fff;
+	width: auto;
+	padding: 40px 20px 40px 0;
+	margin: 0;
+	text-align: center;
+	font-size: 42px;
+	border-bottom: 1px solid #ececec;
+	position: relative;
+	/*position: fixed;*/
+	z-index: 10000;
+}
+
+.entry-content {
+ 	overflow: hidden;
+}
+
+@media screen and (max-width: 640px) {
+.entry-title {
+	padding: 20px;
+}
+
+.entry-title h1 {
+	font-size: 18px !important;
+}
+}
+
+.the_content {
+
+}
+
+.the_content .contentArticle {
+	max-width: 960px;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 20px;
+	position: relative;
+}
+
+@media screen and (max-width: 640px) {
+.the_content .contentArticlee {
+	width: 100%;
+}
+}
+
+/* @group Blog */
+
+.page-template-t_blog-php, #tinymce, .single-post {
+	background: transparent url('bkg-bruit.png');
+}
+
+.entry-content.blog {
+	max-width: 960px;
+	margin: 20px auto 0 auto;
+}
+
+.blog article {
+	position: relative;
+}
+
+.blog article .entry-inner {
+	background: #fff;
+	max-width: 600px;
+	padding: 20px;
+	margin: 0 0 20px 280px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #ececec;
+	position: relative;
+	min-height: 200px;
+}
+
+.blog article .entry-inner h2,
+.blog article .entry-inner h2 a {
+	margin-bottom: 0 !important;
+	color: #000 !important;
+}
+
+.blog article .entry-inner p:last-child {
+	margin-bottom: 0 !important;
+}
+
+.blog article .entry-inner .entry-header {
+	margin-bottom: 20px;
+    padding-right: 40px;
+    background: #fff;
+}
+
+.blog article .entry-header .blogArticleLoader {
+	-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+.blog article .entry-header .blogArticleLoader:hover {
+	color: #f00001 !important;
+}
+
+.blog article.post-noe-current .entry-inner .entry-header {
+    position: fixed;
+    left: 0;
+    opacity: 0.9;
+    padding: 20px 40px 20px 20px;
+}
+.blog article.post-noe-current .entry-inner .entry-header:hover {
+    opacity: 1;
+}
+
+.blog article .entry-inner .entry-header .auteur span, .blog article .entry-inner .entry-header .date span {
+	font-style: italic;
+}
+
+.blog article .entry-inner .entry-header .categorie_libelle {
+	display: inline-block;
+	background: #f1f1f1;
+	padding: 2px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* @end */
+
+/* @group 4-Modules */
+/*-------------------------------------------------------------------*
+Modules
+Commentaire : 1 Dossier pour chaque module + 1 dossier pour chaque type de presentation du module (liste, fiche)
+---------------------------------------------------------------------*/
+
+
+/* @end */
+
+/* @group 5-UI elements */
+/*-------------------------------------------------------------------*
+UI elements
+Commentaire : Boutons, Scrollbar, Markers, Selection texte, Formulaires
+---------------------------------------------------------------------*/
+
+::selection {
+	color: #fff;
+	background: #f00001; /* Safari */
+}
+
+::-moz-selection {
+	color: #fff;
+	background: #f00001; /* Firefox */
+}
+
+.ajaxLoader {
+	position:absolute;
+	top:50%;
+	left:50%;
+    background: white;
+	padding: 30px;
+	margin-left: 100px;
+	margin-top: -40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #ececec;
+}
+
+#infscr-loading {
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #ececec;
+	background: #fff;
+	width: 600px;
+	padding: 20px;
+	margin: 20px 0 20px 280px;
+	text-align: center;
+}
+
+
+
+@media screen and (max-width: 640px) {
+#infscr-loading {
+	margin-left: 0;
+	width: 300px;
+}
+
+}
+
+.meta-nav {
+	display: none;
+}
+
+/* @group Boutons : navigation */
+
+.backbtn {
+	position: absolute;
+	left: 30px;
+	top: 40px;
+	background: #999 url('images/liste.png') 18px 18px no-repeat;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-transition: background 0.5s;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+}
+
+.backbtn:hover {
+	background: #222 url('images/liste.png') 18px 18px no-repeat;
+	-transition: background 0.5s;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+}
+
+.prevnextbtn {
+	position: absolute;
+	right: 30px;
+	top: 40px;
+	z-index: 5000;
+    height: 50px;
+}
+
+.prevnextbtn li {
+	display: inline-block;
+}
+
+.ie7 .prevnextbtn li {
+	display: inline;
+	zoom: 1;
+}
+
+.prevnextbtn li a {
+	background: #222 url('images/arrow-prev.png') 19px 18px no-repeat;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-indent: -9999px;
+	-webkit-border-radius: 120px;
+	-moz-border-radius: 120px;
+    border-radius: 120px;
+	-transition: background 0.5s;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+}
+
+.prevnextbtn .nextbtn a {
+	background: #222 url('images/arrow-next.png') 22px 18px no-repeat;
+}
+
+.prevnextbtn li a:hover {
+	background: #f00001 url('images/arrow-prev.png') 19px 18px no-repeat;
+	-transition: background 0.5s;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+}
+
+.prevnextbtn .nextbtn a:hover {
+	background: #f00001 url('images/arrow-next.png') 22px 18px no-repeat;
+}
+
+@media screen and (max-width: 640px) {
+.backbtn, .prevnextbtn {
+	display: none;
+}
+
+}
+
+/* @end */
+
+/* @group Tipsy */
+
+.tipsy { padding: 5px; font-size: 12px; opacity: 1; filter: alpha(opacity=100); background-repeat: no-repeat;  background-image: url('images/tipsy.gif'); }
+  .tipsy-inner { padding: 10px 15px; background-color: black; color: white; max-width: 250px; text-align: center; }
+  .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+  .tipsy-north { background-position: top center; }
+  .tipsy-south { background-position: bottom center; }
+  .tipsy-east { background-position: right center; }
+  .tipsy-west { background-position: left center; }
+
+/* @end */
+
+
+@media screen and (max-width: 640px) {
+  .ajaxLoader {
+	margin: 0 0 0 -40px !important;
+}
+}
+
+/* @group Ribbon */
+
+.ribbon {
+	/*background: #f00001;*/
+	background: transparent url('images/ribbon.png') 0 0 no-repeat;
+	width: 255px;
+	height: 60px;
+	display: block;
+	padding: 15px 0 0 55px;
+	color: #fff !important;
+	font-family: "proxima-nova", arial;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 14px;
+	text-transform: uppercase;
+	cursor: pointer !important;
+	z-index: 1000;
+    margin-top: 0;
+    -moz-transition:margin-top linear 0.2s;
+    -webkit-transition:margin-top linear 0.2s;
+    transition:margin-top linear 0.2s;
+}
+
+.ribbon:hover {
+	background: transparent url('images/ribbon.png') 0 0 no-repeat;
+	color: #fff;
+	margin-top: 15px;
+    -moz-transition:margin-top linear 0.2s;
+    -webkit-transition:margin-top linear 0.2s;
+    transition:margin-top linear 0.2s;
+}
+
+
+@media screen and (max-width: 640px) {
+  .ribbon {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+/* @end */
+
+
+/* @group Social toolbar */
+
+
+ul.noeSocialToolbar {margin: 0px 0px 0 0; float:right;display:inline;list-style: none;top:0;right:0;}
+ul.noeSocialToolbar li {list-style: none; margin: 0;padding: 0; display: inline; background: none;}
+ul.noeSocialToolbar li a {width: 30px; height: 30px; display: block; float: left; border: none; margin-right: 5px !important; text-indent: -9999px;}
+ul.noeSocialToolbar li a span {display: none !important;}
+
+ul.noeSocialToolbar li.tool_agrandir a{background-position: -125px -24px !important;}
+ul.noeSocialToolbar li.tool_reduire a{background-position: -150px -24px !important;}
+ul.noeSocialToolbar li.tool_email a{background-position: -75px -24px !important;}
+ul.noeSocialToolbar li.tool_print a{background-position: -100px -24px !important;}
+ul.noeSocialToolbar li.tool_facebook a{background: url('ico-facebook3.png') 0 0 no-repeat;}
+ul.noeSocialToolbar li.tool_twitter a{background: url('ico-twitter3.png') 0 0 no-repeat;}
+
+/* @end */
