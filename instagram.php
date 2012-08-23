@@ -105,12 +105,17 @@ class instagramPhp{
 
         //If not cached, -> instagram request
         if(!file_exists($cachefile)){
-            $request = file_get_contents($url);
+            //Request
+            $request='error';
+            if(!extension_loaded('openssl')){ $request = 'This class requires the php extension open_ssl to work as the instagram api works with httpS.'; }
+            else { $request = file_get_contents($url); }
+
             //remove old caches
             $oldcaches = glob($cachefolder.$cachekey."*.txt");
             if(!empty($oldcaches)){foreach($oldcaches as $todel){
               unlink($todel);
             }}
+            
             //Cache result
             $rh = fopen($cachefile,'w+');
             fwrite($rh,$request);
