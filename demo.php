@@ -91,16 +91,6 @@
     </footer>
 
 </div><!-- #wrapper -->
-<script type='text/javascript' src='scrollToTop.min.js'></script>
-<script type='text/javascript'>
-	jQuery(document).ready(function($){
-		$('#content').backtotop({
-			topOffset: 500,
-			animationSpeed: 2000,
-			bckTopLinkTitle: 'Retour en haut de page'
-		});
-	});
-</script>
 
 </body>
 </html>
