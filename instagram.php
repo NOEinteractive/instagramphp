@@ -130,7 +130,7 @@ class instagramPhp{
      * Error
      */
     public function error($src=''){
-        echo '/!\ error '.$src.'. ';
+        trigger_error( '/!\ error '.$src.'. ', E_USER_WARNING);
     }
 
 }
