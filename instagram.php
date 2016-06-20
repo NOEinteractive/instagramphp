@@ -82,7 +82,10 @@ class instagramPhp{
                     $istg_link = $istg->{'link'}; //Link to the picture's instagram page, to link to the picture image only, use $istg->{'images'}->{'standard_resolution'}->{'url'}
 
                     //The caption
-                    $istg_caption = $istg->{'caption'}->{'text'};
+                    $istg_caption = "";
+                    if(isset( $istg->{'caption'}->{'text'} )) {
+                        $istg_caption = $istg->{'caption'}->{'text'};
+                    }
 
                     //The markup
                     $simpleDisplay.='<li><a class="instalink" href="'.$istg_link.'" target="_blank"><img src="'.$istg_thumbnail.'" alt="'.$istg_caption.'" title="'.$istg_caption.'" /></a></li>';
